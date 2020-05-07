@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 조작</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+    //.addClass() : 선택한 요소에 클래스를 생성한다.
+    //.removeClass("클래스이름"): 선택한 요소에서 지정한 클래스를 삭제한다.
+    //.toggleClass("클래스이름"):선택한 요소에 지정한 클래스가 없으면 생성, 있으면 삭제
+    //.hasClass("클래스이름"):선택한 요소에 지정한 클래스가 있으면 true 없으면 false
+    $(function(){
+    $("#p1").addClass("aqua"); //aqua라는 클래스를 추가해!(add)
+    $("#p2").removeClass("red"); //red라는 클래스를 삭제해!(remove)
+    $("#p4").click(function(){
+        $(this).toggleClass("green");
+     });
+    if($("#p5").hasClass("yellow")) {
+        $("#p6").text("#p5에 .yellow가 있다.");
+    } else { 
+        $("#p6").text("#p5에 .yellow가 없다.");
+    }
+    });
+    </script>
+    <style>
+        .aqua{
+            background : aqua;
+        }
+        .red{
+            color:red;
+        }
+        .green{
+            color:white;
+            background:green;
+        }
+        .yellow{
+            border:2px solid yellow;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>객체 조작 메서드</h1>
+    <h2>p.223~223</h2>
+    <p>addClass() vs removeClass(), toggleClass(), hasClass() 메서드에 대해서 알아보자</p>
+    <p id="p1">내용 1</p>
+    <p id="p2" class="red">내용 2</p>
+    <p id="p3">내용 3</p>
+    <p id="p4" class="green">내용 4</p>
+    <p id="p5" class="yellow">내용 5</p>
+    <p id="p6">내용 6</p>
+</body>
+</html>

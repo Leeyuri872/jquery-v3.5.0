@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+body{
+    font:16px/1.5 "Noto Sans KR",sans-serif;
+    color:#333;
+}
+a,a:link{
+    text-decoration: none;
+    color:inherit;
+}
+ul{
+    list-style: none;
+}
+#side{
+    width:300px;
+    height:100%;
+    position:fixed;
+    left:-290px;
+    top:0;
+    background:indianred;
+    z-index: 9999;
+    color:#f2f2f2;
+    box-shadow: 3px 0 10px 0 rgba(0,0,0,.2);
+}
+.open{
+    left:0 !important;
+}
+.onoff_btn{
+    position:absolute;
+    right:0;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    padding:0 10px 0 0;
+    border-radius: 50%;
+    background:indianred;
+    transform:translate(50%,-50%);
+    text-align: right;
+    line-height: 50px;
+    font-size:2em;
+}
+.logo{
+    margin:5% 2%;
+    height:100px;
+    background:darkred;
+}
+#gnb li{
+    padding:15px 0;
+    border-bottom:1px solid #f9f9f9;
+
+}

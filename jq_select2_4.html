@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>탐색 선택자</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script>
-    $(document).ready(function(){
-    
-    });
-    </script>
+    <title>제이쿼리 탐색 선택자</title>
+    <!--제이쿼리 library 사용
+    1. js파일을 다운로드 연결 : 권장(개발 완료 후)
+    2. cdn 통해서 연결(network를 통해서 ...인터넷 장애..jquery오류) : 테스트, 개발-->
+    <script src="script/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
-    
+    <h1>제이쿼리 탐색 선택자</h1>
+    <p>p.194</p>
+    <p>first-of-type 선택자는 선택한 요소의 무리 중 첫번째 요소만 선택합니다.</p>
+    <ul>
+        <li>내용1-1</li>
+        <li>내용1-2</li>
+        <li>내용1-3</li>
+    </ul>
+    <ul>
+        <li>내용2-1</li>
+        <li>내용2-2</li>
+        <li>내용2-3</li>
+    </ul>
+    <script>
+        //단축형
+        $(function(){//$ : 찾아라~(여러개 = 복수)
+            // console.log("li의 개수 : "+$("li").length);
+            $("li:first-of-type").css("backgroundColor","#ff0");
+            $("li:last-of-type").css("backgroundColor","#0ff");
+        });
+    </script>
 </body>
 </html>

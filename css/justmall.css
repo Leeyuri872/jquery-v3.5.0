@@ -55,21 +55,21 @@
     display:inline-block;
     margin:16px 0 0 0;
 }
-.board_title li.on{
-    background:#222328;
-}
+
 .board_title li.on a{
     display: block;
     color:#fff;
     padding:5px 10px;/*a:기본값이 인라인요소라 높이값조정안되니까 block으로 바꿔줘야됨*/
-    
+    background:#222328;
 }
 #notice{
     list-style:square inside;
     margin:0 0 0 1em;
 }
-#gallery{
+.hide{
     display:none; 
+}
+#gallery{
     position:absolute;
     top:0;
     left:0;

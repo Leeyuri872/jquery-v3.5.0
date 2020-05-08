@@ -40,7 +40,10 @@
 }
 #board_tab{
     width:480px;
+    box-sizing: border-box;
+    padding:0 20px 0 0;
     float:left;
+    font-size:0.9em;
 }
 .board_title{
     height:50px;
@@ -50,6 +53,7 @@
 .board_contents{
     height:150px;
     position: relative;
+    overflow: hidden;
 }
 .board_title li{
     display:inline-block;
@@ -66,19 +70,38 @@
     list-style:square inside;
     margin:0 0 0 1em;
 }
+#notice li{
+    position:relative;
+    margin:5px 0;
+}
+#notice li span{
+    position: absolute;
+    font-size: 0.9em;
+    right:0;
+}
 .hide{
     display:none; 
 }
 #gallery{
+    padding:10px 0 0 0;
+    box-sizing: border-box;
     position:absolute;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background:#fff;    
+    background:#fff;
+    text-align: center;    
 }
 #gallery li{
     display:inline-block;
+}
+#gallery li:nth-child(2){
+    margin: 0 10px;
+}
+#gallery li img{
+    width:130px;
+    height:110px;
 }
 #banner{
     width:30%;/*0.3*1200=360px로 자동으로 환산*/

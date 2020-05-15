@@ -1,7 +1,38 @@
 $(function(){
     tabs();  //tabs 기능 호출(=실행)
     popup(); // popup 기능 호출   
+    gnb(); //gnb 기능 호출
 });
+
+function gnb(){
+    $("#gnb > li").hover(
+        function(){
+            //마우스 오버시 실행할 코드
+            $(this).addClass("on");
+            $(".lnb").show();
+        },
+        function(){
+            //마우스 아웃시 실행할 코드
+            $(this).removeClass("on");
+            $(".lnb").hide();
+        }
+    );
+
+    
+   
+   
+   
+   
+    // $("#gnb > li").mouseover(function(){
+    //     $(this).addClass("on"); //.on을 적용해
+    //     $(".lnb").show();
+    // });
+    // $(".lnb")
+    // $("#gnb > li").mouseout(function(){
+    //     $(this).removeClass("on"); //.on을 제거해
+    //     $(".lnb").hide();
+    // });
+}
 
 function tabs(){
     $(".board_title li").click(function(){
@@ -19,8 +50,6 @@ function tabs(){
         }
     });
 }
-
-
 function popup(){
     popup_open();
     popup_close();

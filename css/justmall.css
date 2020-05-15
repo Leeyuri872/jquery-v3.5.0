@@ -1,7 +1,21 @@
 @charset "utf-8";
-
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    font:16px/1.5 dotum,gulim,batang,sans-serif;
+    color:#222328;
+}
+a,a:link{
+    text-decoration: none;
+    color:inherit; /*부모 요소로부터 상속 받겠다*/
+}
 .notext{
     display: none;
+}
+ul{
+    list-style: none;
 }
 
 #popup{
@@ -27,6 +41,67 @@
 .header{
     background:gold;
     height:100px;
+}
+.header_wrap{
+    width:1200px;
+    margin:0 auto;
+}
+.header_wrap::after{/*clearFix기법*/
+    content:'';
+    display: block;
+    clear:both;
+}
+#logo{
+    width:200px;
+    height: 40px;
+    background:coral;
+    float:left;
+    margin:30px 0 0 0;
+}
+.nav{
+    width: 600px;
+    height: 50px;
+    background:peachpuff;
+    float:right;
+    margin:30px 50px 0 0;
+}
+#gnb{
+    width:100%;
+}
+#gnb > li{
+    width: 25%;
+    float: left;
+}
+#gnb >li > a{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.on {
+    color:#fff;
+    background:#000;
+}
+/* #gnb > li > a:hover{
+    color: #fff;
+    background: #000;
+} */
+/* #gnb >li:hover .lnb{
+    display: block;
+} */
+.lnb{
+    background:salmon;
+    display: none;
+}
+.lnb li{
+    text-align: center;
+}
+.lnb li a{
+    display:block;
+}
+.lnb li a:hover{
+    color:#fff;
+    background: #222328;
 }
 /*slide*/
 .slide{

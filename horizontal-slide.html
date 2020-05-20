@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 수평 슬라이드</title>
+    <style>
+        .slide{
+            width:1200px;
+            height:300px;
+            overflow: hidden;
+            margin:0 auto;
+        }
+        #slideImgs{
+            width: 1200px;
+            height:900px;
+            margin-top: 0;
+        }
+        /* #slideImgs{ 좌우이동
+            width: 3600px;
+            height:300px;
+        } */
+        #slideImgs > div{
+            float: left;
+            width: 1200px;
+            height: 300px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    //위아래이동
+    var HEIGHT,INDEX;
+    $(document).ready(function(){
+        HEIGHT = 300;
+        INDEX = 0;
+        setInterval(slide,3000);
+    });
+    function slide(){
+        if(INDEX >= 3) INDEX=0;
+        var nPos = -1 *HEIGHT*INDEX;
+        $("#slideImgs").animate({
+            marginTop:nPos
+        },400,"swing");
+        INDEX=INDEX+1;
+    }
+    // p.294 좌우이동
+    // var WIDTH,INDEX;//선언(전역변수)
+    // $(document).ready(function(){
+    //     WIDTH = 1200; //값을 초기화
+    //     INDEX = 0; //초기화
+    //     setInterval(slide,3000); //함수를 3초마다 (계속)실행(=호출)
+    //         //타이밍함수
+    //         //setInterval(); : -매 ms초마다 반복
+    //         //setTimeout(); : -정해진 ms초 후에 실행(한번만)
+    //         //함수(function)화 시켜줘야합니다
+    // });
+    // function slide(){
+    //     //-1200 = -1 * 1200 * 1,2,3,4,5.....
+    //     if(INDEX >= 3) INDEX = 0; //단순 if문, 조건이 참일때만 실행.
+    //     var nPos = -1 * WIDTH * INDEX;
+    //     $("#slideImgs").animate({
+    //         marginLeft:nPos
+    //     },400,"swing");
+    //     INDEX=INDEX+1;
+    // }
+
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 수평 슬라이드</h1>
+    <h2>.animate() 메서드를 이용한 슬라이드 제작</h2>
+    <p>웹디자인 기능사 실기, 업무에서 사용한 슬라이드 이미지 제작을 수평/수직 등의
+        방향으로 나누어 제작해봅시다.
+    </p>
+    <h2>요구사항</h2>
+    <ul>
+        <li>슬라이드는 3장의 이미지와 관련 텍스트를 제공하고 텍스트는 글자체,
+            굵기, 색상, 크기를 적절하게 설정하여 가독성을 높여서 배치
+        </li>
+        <li>매 3초 이내로 이미지가 좌우로 움직이게 (이미지만 바뀌면 안됨)</li>
+        <li>웹사이트를 열었을때 자동으로 시작, 반복되게</li>
+    </ul>
+    <h2>구현</h2>
+    <div class="slide">
+        <div id="slideImgs">
+            <div>
+                <img src='https://via.placeholder.com/1200x300/aaf/ffffff' alt='placeholder'>
+                <div class="info">
+                    <h2>슬라이드 이미지 제목1</h2>
+                    <p>슬라이드 이미지 내용1</p>
+                </div>
+            </div>
+            <div>
+                <img src='https://via.placeholder.com/1200x300/fcc/ffffff' alt='placeholder'>
+                <div class="info">
+                    <h2>슬라이드 이미지 제목1</h2>
+                    <p>슬라이드 이미지 내용1</p>
+                </div>
+            </div>
+            <div>
+                <img src='https://via.placeholder.com/1200x300/3366ff/ffffff' alt='placeholder'>
+                <div class="info">
+                    <h2>슬라이드 이미지 제목1</h2>
+                    <p>슬라이드 이미지 내용1</p>
+                </div>
+            </div>
+        </div><!-- /#slideImgs -->
+    </div><!-- /.slide -->
+</body>
+</html>

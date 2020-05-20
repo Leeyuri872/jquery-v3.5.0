@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>효과 및 애니메이션 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <h1>효과메서드</h1>
+    <h2>.fadeTo()</h2>
+    <h2>p.290~293</h2>
+    <p>fadeTo() 메서드는 대상에 지정한 투명도를 적용합니다.</p>
+    <h2>예시</h2>
+    <p>
+        <button class="btn1">slideUp()</button>
+        <button class="btn2">fadeIn()</button>
+    </p>
+    <p>
+        <button class="btn3">toggleSlide()</button>
+    </p>
+    <p>
+        <button class="btn4">fadeTo(0.3)</button>
+        <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptatum, accusantium qui cum ducimus recusandae aut odit maxime repudiandae cupiditate facere ratione eum corrupti. Sunt optio sint aperiam eligendi neque?
+        </div>
+    </div>
+    <script>
+        //p.292
+        $(function(){
+            $(".btn2").hide(9000);
+
+            $(".btn1").on("click",function(){
+                $(".box").slideUp(1000,"linear",function(){
+                    $(".btn1").hide();
+                    $(".btn2").show();
+                });
+            });
+            $(".btn2").on("click",function(){
+                $(".box").slideUp(1000,"swing",function(){
+                    $(".btn2").hide();
+                    $(".btn1").show();
+                });
+            });
+            $(".btn3").on("click",function(){
+                $(".box").slideToggle(1000,"linear");
+            });
+            $(".btn4").on("click",function(){
+                $(".box").fadeTo("fast",0.3)
+            });
+            $(".btn5").on("click",function(){
+                $(".box").fadeTo("fast",1)
+            });
+        });
+    </script>
+</body>
+</html>
+

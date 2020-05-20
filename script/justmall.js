@@ -5,19 +5,19 @@ $(function(){
 });
 
 function gnb(){
+    // 메인메뉴 마우스 오버하면, 서브메뉴 모두 부드럽게 펼쳐줘
+    // 그리고 마우스 오버한 메인메뉴는 하이라이트를 적용해줘
     $("#gnb > li").hover(
         function(){
-            //마우스 오버시 실행할 코드
-            $(this).addClass("on");
-            $(".lnb").show();
+            $(this).addClass("on"); //.on 을 추가해!
+            $(".lnb").show(1000);  // 400,500...slow,fast
         },
         function(){
-            //마우스 아웃시 실행할 코드
-            $(this).removeClass("on");
-            $(".lnb").hide();
+            $(this).removeClass("on"); // .on 을 지워줘!
+            $(".lnb").hide();            
         }
-    );
-
+    );    
+}
     
    
    
@@ -27,12 +27,11 @@ function gnb(){
     //     $(this).addClass("on"); //.on을 적용해
     //     $(".lnb").show();
     // });
-    // $(".lnb")
     // $("#gnb > li").mouseout(function(){
     //     $(this).removeClass("on"); //.on을 제거해
     //     $(".lnb").hide();
     // });
-}
+
 
 function tabs(){
     $(".board_title li").click(function(){
